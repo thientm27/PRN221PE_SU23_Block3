@@ -5,7 +5,7 @@
 
 # Requirement
 - Structure: 3 layer (Daos - Repository - Presentation)
-- Login: Only manager can login to system, if not -> Show error 
+- Login: Login with email. Only manager can login to system, if not -> Show error 
 - View: List all Cartoon film in database with pagination (3 records)
 - Search: by duration or ReleaseYear (relative search)
 - Dealete
