@@ -5,7 +5,7 @@
 
 # Requirement
 - Structure: 3 layer (Daos - Repository - Presentation)
-- Login: Only manager can login to system
+- Login: Only manager can login to system, if not -> Show error 
 - View: List all Cartoon film in database with pagination (3 records)
 - Search: by duration or ReleaseYear
 - Dealete
@@ -14,6 +14,6 @@
   - 1990 <= ReleaseYear <= 2023
   - Name movie from 15 to 200 characters. Frist character must be uppercase
 - Update: same validation with create
-  
+
 # Data Base
-- ![alt text](https://github.com/thientm27/Club-MemberShip/blob/main/Pictures/image2.png?raw=true)
+- ![alt text](https://github.com/thientm27/PRN221PE_SU23_Block3/blob/main/Images/data.png?raw=true)
