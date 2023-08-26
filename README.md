@@ -7,7 +7,7 @@
 - Structure: 3 layer (Daos - Repository - Presentation)
 - Login: Only manager can login to system, if not -> Show error 
 - View: List all Cartoon film in database with pagination (3 records)
-- Search: by duration or ReleaseYear
+- Search: by duration or ReleaseYear (relative search)
 - Dealete
 - Create: create new cartoon film with validation
   - Duration > 0
