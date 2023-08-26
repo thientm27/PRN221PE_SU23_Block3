@@ -1,0 +1,60 @@
+﻿@page
+@model CartoonFilm_TranMinhThien.Pages.Manage.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>CartoonFilmInformation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CartoonFilmInformation.CartoonFilmId" />
+            <div class="form-group">
+                <label asp-for="CartoonFilmInformation.CartoonFilmName" class="control-label"></label>
+                <input asp-for="CartoonFilmInformation.CartoonFilmName" class="form-control" />
+                <span asp-validation-for="CartoonFilmInformation.CartoonFilmName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CartoonFilmInformation.CartoonFilmDescription" class="control-label"></label>
+                <input asp-for="CartoonFilmInformation.CartoonFilmDescription" class="form-control" />
+                <span asp-validation-for="CartoonFilmInformation.CartoonFilmDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CartoonFilmInformation.Duration" class="control-label"></label>
+                <input asp-for="CartoonFilmInformation.Duration" class="form-control" />
+                <span asp-validation-for="CartoonFilmInformation.Duration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CartoonFilmInformation.ReleaseYear" class="control-label"></label>
+                <input asp-for="CartoonFilmInformation.ReleaseYear" class="form-control" />
+                <span asp-validation-for="CartoonFilmInformation.ReleaseYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CartoonFilmInformation.CreatedDate" class="control-label"></label>
+                <input asp-for="CartoonFilmInformation.CreatedDate" class="form-control" />
+                <span asp-validation-for="CartoonFilmInformation.CreatedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CartoonFilmInformation.ProducerId" class="control-label"></label>
+                <select asp-for="CartoonFilmInformation.ProducerId" class="form-control" asp-items="ViewBag.ProducerId"></select>
+                <span asp-validation-for="CartoonFilmInformation.ProducerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

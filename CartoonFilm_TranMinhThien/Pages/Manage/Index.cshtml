@@ -1,0 +1,87 @@
+﻿@page
+@model CartoonFilm_TranMinhThien.Pages.Manage.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>CartoonFilmInformation</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<form method="post">
+    <select name="SearchBy">
+        <option value="duration">Search Duration</option>
+        <option value="releaseYear">Search by ReleaseYear</option>
+    </select>
+    <input type="text" asp-for="Keyword" />
+    <button type="submit" class="btn-primary">Search</button>
+</form>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CartoonFilmInformation[0].CartoonFilmName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CartoonFilmInformation[0].CartoonFilmDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CartoonFilmInformation[0].Duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CartoonFilmInformation[0].ReleaseYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CartoonFilmInformation[0].CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CartoonFilmInformation[0].Producer)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CartoonFilmInformation) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CartoonFilmName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CartoonFilmDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReleaseYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producer.ProducerName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CartoonFilmId">Edit</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CartoonFilmId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<div>
+    <ul class="pagination">
+        @for (var i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                <a asp-page="./index" asp-route-PageIndex="@i" asp-route-id="@Model.NewId" class="page-link">@i</a>
+            </li>
+        }
+    </ul>
+</div>
