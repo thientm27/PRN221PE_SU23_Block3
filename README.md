@@ -2,7 +2,7 @@
 - Practical project for cources PRN221 in FPT University
 - 90 minues to do this project
 - Web project write with C# - ASP.Net Core
-
+- Score: 7.3/10
 # Requirement
 - Structure: 3 layer (Daos - Repository - Presentation)
 - Login: Login with email. Only manager can login to system, if not -> Show error 
